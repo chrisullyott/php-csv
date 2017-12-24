@@ -107,7 +107,7 @@ class CsvParser
     {
         $items = array();
 
-        $headers = array_map('self::sanitizeKey', array_shift($rows));
+        $headers = array_map('trim', array_shift($rows));
 
         foreach ($rows as $k => $row) {
             foreach ($row as $k2 => $cell) {
@@ -137,22 +137,6 @@ class CsvParser
         }
 
         return $rows;
-    }
-
-    /**
-     * Sanitize a string into a simple array key.
-     *
-     * @param  string $key An array key to use for the data
-     * @return string
-     */
-    private static function sanitizeKey($key)
-    {
-        $key = strtolower($key);
-        $key = preg_replace('/[\s-_]+/', '_', $key);
-        $key = preg_replace('/[^a-z0-9_]/i', '', $key);
-        $key = trim($key, '_');
-
-        return $key;
     }
 
     /**
