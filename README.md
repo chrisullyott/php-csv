@@ -4,12 +4,10 @@ CSV-to-array conversion in PHP.
 
 ### Installation
 
-With Composer:
+With [Composer](https://getcomposer.org/):
 
 ```
-"require": {
-    "chrisullyott/php-csv": "dev-master"
-}
+$ composer require chrisullyott/php-csv
 ```
 
 ### Usage
